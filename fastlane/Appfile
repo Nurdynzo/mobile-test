@@ -1,1 +1,9 @@
-app_identifier("com.plateaumed")
+app_identifier("com.plateaumed") # The bundle identifier of your app
+apple_id("ololosky@gmail.com") # Your Apple Developer Portal username
+
+
+itc_team_id("123030018") # App Store Connect Team ID
+team_id("TH67FFV4SY") # Developer Portal Team ID 724V3SWCY9 TH67FFV4SY
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
