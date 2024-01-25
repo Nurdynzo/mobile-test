@@ -1,0 +1,35 @@
+name: 'Scan Failure Notification'
+description: 'Scan failure notification via Slack'
+
+inputs:
+  actor:
+    description: 'Actor'
+    default: ${{ github.actor }}
+  branch:
+    description: 'Branch name'
+    default: ${{ github.base_ref || github.ref_name }}
+  repo:
+    description: 'repository name'
+    default: ${{ github.event.repository.name }}
+  telegramToken:
+    description: 'Telegram Token'
+    default: "5952083065:AAGcPHX1iIYw-z7pFR_JA3Nj8ui-54zhAI8"
+  chatId:
+    description: 'Telegram Chat ID'
+    default: "-990980629"
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Send Telegram notification  
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ inputs.chatId }}
+        token: ${{ inputs.telegramToken }}
+        message: |
+          ❌ DEPLOYEMNT FAILURE ❌
+          The deployment triggered by 
+          ${{ inputs.actor }} from 
+          ${{ inputs.branch }} branch of 
+          ${{ inputs.repo }} service has 
+          failed
