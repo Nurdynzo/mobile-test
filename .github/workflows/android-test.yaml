@@ -28,7 +28,7 @@ on:
 jobs:
    buildUatApk:
     name: Build APK
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -36,22 +36,15 @@ jobs:
       - name: Setup
         uses: ./.github/workflows/actions/setup
 
-      - name: Tag Apk
-        id: apk-name
-        env:
-          VERSION_NAME: ${{ inputs.versionNamePrefix }}
-          VERSION_CODE: ${{ inputs.versionCode }}  
-          ENV_VARS: ${{ secrets.STAGING_ENV }} 
+      - name: Install plugins
         run: |
-          echo "$ENV_VARS">.env
-          APK_NAME=$(echo $VERSION_CODE-$VERSION_NAME)
-          echo "::set-output name=name::$APK_NAME" 
+          cd ios
+          bundle install
+          pod install
 
       - name: Run Fastlane Deployment
-        run: fastlane build_and_upload_apk
+        run: fastlane beta
         env:
-         APK_VERSION_NAME: ${{ steps.apk-name.outputs.name }}
-         FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
-         FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-         RELEASE_NOTES: ${{ inputs.releaseNotes }}
-         TESTERS_GROUP: ${{ secrets.QA_GROUP }}
+         FASTLANE_USER: ololosky@gmail.com
+         FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_SPECIFIC_PASSWORD }}
+         
