@@ -44,7 +44,7 @@ jobs:
 
       - name: Run Fastlane Deployment
         run: |
-          fastlane gym --workspace "ios/plateaumed.xcworkspace" --allowProvisioningUpdates --scheme "plateaumed" --clean
+          fastlane gym --workspace "ios/plateaumed.xcworkspace" --allowProvisioningUpdates true --scheme "plateaumed" --clean
           fastlane beta
         env:
          FASTLANE_USER: ololosky@gmail.com
