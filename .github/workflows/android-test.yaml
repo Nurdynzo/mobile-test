@@ -43,7 +43,9 @@ jobs:
           pod install
 
       - name: Run Fastlane Deployment
-        run: fastlane beta
+        run: |
+          fastlane gym --workspace "ios/plateaumed.xcworkspace" --scheme "plateaumed" --clean
+          fastlane beta
         env:
          FASTLANE_USER: ololosky@gmail.com
          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_SPECIFIC_PASSWORD }}
