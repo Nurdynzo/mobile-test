@@ -35,3 +35,14 @@ platform :android do
         android_artifact_path: "android/app/build/outputs/apk/release/app-release.apk")
   end
 end
+
+default_platform(:ios)
+
+platform :ios do
+    desc "Push a new beta build to TestFlight"
+    lane :beta do
+      increment_build_number(xcodeproj: "./ios/plateaumed.xcodeproj")
+      build_app(workspace: "./ios/plateaumed.xcworkspace", scheme: "plateaumed")
+      upload_to_testflight
+    end
+  end
