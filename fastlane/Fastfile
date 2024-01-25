@@ -45,10 +45,7 @@ platform :ios do
       build_app(
         workspace: "./ios/plateaumed.xcworkspace", 
         scheme: "plateaumed",
-        export_options: {
-            provisioningProfiles: {
-              "com.plateaumed" => "Fastlane",
-        )
+        export_options: {provisioningProfiles: {"com.plateaumed" => "Fastlane"}})
       upload_to_testflight
     end
   end
