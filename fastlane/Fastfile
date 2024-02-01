@@ -41,6 +41,7 @@ default_platform(:ios)
 platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
+    setup_ci
     app_store_connect_api_key(
         key_id: "82545M9GLY",
         issuer_id: "d8cb97d6-a5c6-48e7-ac49-f79df8b00d63",
@@ -50,7 +51,6 @@ platform :ios do
       ) 
 
     increment_build_number(xcodeproj: "./ios/plateaumed.xcodeproj")
-
     sync_code_signing(
       type: "appstore",
       app_identifier: 'com.plateaumed',
