@@ -52,10 +52,7 @@ platform :ios do
     increment_build_number(xcodeproj: "./ios/plateaumed.xcodeproj")
     build_app( workspace: "./ios/plateaumed.xcworkspace", 
     scheme: "plateaumed", 
-    export_options: {
-    provisioningProfiles: {
-       app_identifier => com.plateaumed 
-    }})
+    xcargs: "-allowProvisioningUpdates")
     upload_to_testflight
   end
 end 
