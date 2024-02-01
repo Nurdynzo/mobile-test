@@ -49,13 +49,15 @@ platform :ios do
         in_house: false
       ) 
     increment_build_number(xcodeproj: "./ios/plateaumed.xcodeproj")
-    build_app( workspace: "./ios/plateaumed.xcworkspace", 
-    scheme: "plateaumed", 
-    xcargs: "-allowProvisioningUpdates")
+    build_app(
+    scheme: "plateaumed",
+    export_method: "app-store",
     export_options: {
-        provisioningProfiles: {
-          "com.plateaumed"=> "Fastlane"
-        }})
+      provisioningProfiles: {
+       "com.plateaumed" => "Fastlane"
+       }
+     }
+)
     upload_to_testflight
   end
 end 
