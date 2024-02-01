@@ -58,7 +58,7 @@ platform :ios do
         method: "ad-hoc",
         provisioningProfiles: {
           "com.plateaumed": "match AdHoc com.plateaumed"
-        }
+        }})
     upload_to_testflight
   end
 end 
