@@ -33,14 +33,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         
-      - name: Setup
-        uses: ./.github/workflows/actions/setup
+      # - name: Setup
+      #   uses: ./.github/workflows/actions/setup
 
-      - name: Install plugins
-        run: |
-          cd ios
-          bundle install
-          pod install
+      # - name: Install plugins
+      #   run: |
+      #     cd ios
+      #     bundle install
+      #     pod install
 
       - name: Run Fastlane Deployment
         run: |
