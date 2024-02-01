@@ -2,6 +2,6 @@
   "key_id": "82545M9GLY",
   "issuer_id": "d8cb97d6-a5c6-48e7-ac49-f79df8b00d63",
   "key": "-----BEGIN PRIVATE KEY-----MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgVsJcKzpas5K2jtRdGUXunpVz42kDQ8ixHwK4rPH0ahagCgYIKoZIzj0DAQehRANCAAQO0KxlWBD3V0DRux6cqY3lcvMXO7qY9OfMnhuMPkA/xxWBL8kbk5c/IG3S70JL+Bh35pL/RDgrG6NTW6BIqVBo-----END PRIVATE KEY-----",
-  "duration": 1200, # optional (maximum 1200)
-  "in_house": false # optional but may be required if using match/sigh
+  "duration": 1200,
+  "in_house": false
 }
