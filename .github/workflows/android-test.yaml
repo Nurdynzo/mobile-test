@@ -44,9 +44,5 @@ jobs:
 
       - name: Run Fastlane Deployment
         run: |
-          fastlane gym --workspace "ios/plateaumed.xcworkspace" --allowProvisioningUpdates true --scheme "plateaumed" --clean
           fastlane beta
-        env:
-         FASTLANE_USER: ololosky@gmail.com
-         FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_SPECIFIC_PASSWORD }}
          
