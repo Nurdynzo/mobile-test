@@ -56,7 +56,7 @@ platform :ios do
         signingStyle: "manual",
         method: "ad-hoc",
         provisioningProfiles: {
-          "com.plateaumed": "match AdHoc com.plateaumed"
+          "com.plateaumed"=> "match AdHoc com.plateaumed"
         }})
     upload_to_testflight
   end
