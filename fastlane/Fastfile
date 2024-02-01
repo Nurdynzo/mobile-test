@@ -48,17 +48,26 @@ platform :ios do
         duration: 1200,
         in_house: false
       ) 
+
     increment_build_number(xcodeproj: "./ios/plateaumed.xcodeproj")
-    build_app( workspace: "./ios/plateaumed.xcworkspace",
+
+    build_app( 
+    workspace: "./ios/plateaumed.xcworkspace",
+    sync_code_signing(
+      type: "appstore",
+      app_identifier: 'com.plateaumed',
+      readonly: true
+    )
     scheme: "plateaumed",
     xcargs: "-allowProvisioningUpdates",
     export_method: "app-store",
     export_options: {
       provisioningProfiles: {
-       "com.plateaumed" => "Fastlane"
-       }
-     }
-)
+       "com.plateaumed" => "Fastlane"}}
+    )
+
     upload_to_testflight
   end
 end 
+
+
