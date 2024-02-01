@@ -53,6 +53,12 @@ platform :ios do
     build_app( workspace: "./ios/plateaumed.xcworkspace", 
     scheme: "plateaumed", 
     xcargs: "-allowProvisioningUpdates")
+    export_options: {
+        signingStyle: "manual",
+        method: "ad-hoc",
+        provisioningProfiles: {
+          "com.plateaumed": "match AdHoc com.plateaumed"
+        }
     upload_to_testflight
   end
 end 
