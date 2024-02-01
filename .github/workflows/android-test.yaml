@@ -44,5 +44,6 @@ jobs:
 
       - name: Run Fastlane Deployment
         run: |
+          gem install fastlane
           fastlane beta
          
