@@ -41,7 +41,14 @@ default_platform(:ios)
 platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
-    pilot( api_key_path: "fastlane/82545M9GLY.json" )   
+    app_store_connect_api_key(
+        key_id: "82545M9GLY",
+        issuer_id: "d8cb97d6-a5c6-48e7-ac49-f79df8b00d63",
+        key_filepath: "./AuthKey_82545M9GLY.p8",
+        duration: 1200,
+        in_house: false
+      )
+    pilot 
     increment_build_number(xcodeproj: "./ios/plateaumed.xcodeproj")
     build_app(workspace: "./ios/plateaumed.xcworkspace", scheme: "plateaumed")
     upload_to_testflight
