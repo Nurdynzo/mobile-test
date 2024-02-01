@@ -50,7 +50,6 @@ platform :ios do
       ) 
     enable_automatic_code_signing(path: "./ios/plateaumed.xcodeproj")
     increment_build_number(xcodeproj: "./ios/plateaumed.xcodeproj")
-    match(app_identifier: ["com.plateaumed"])
     build_app( workspace: "./ios/plateaumed.xcworkspace", 
     scheme: "plateaumed", 
     export_options: {
