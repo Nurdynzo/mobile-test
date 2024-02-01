@@ -53,10 +53,8 @@ platform :ios do
     scheme: "plateaumed", 
     xcargs: "-allowProvisioningUpdates")
     export_options: {
-        signingStyle: "manual",
-        method: "ad-hoc",
         provisioningProfiles: {
-          "com.plateaumed"=> "match AdHoc com.plateaumed"
+          "com.plateaumed"=> "Fastlane"
         }})
     upload_to_testflight
   end
