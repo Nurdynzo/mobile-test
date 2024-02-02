@@ -54,7 +54,6 @@ platform :ios do
         derive_catalyst_app_identifier: false,
         force_for_new_devices: true,
         git_url: "https://github.com/Nurdynzo/mobile-test.git",
-        keychain_name: keychain_name,
         platform: "ios",
         team_id: "TH67FFV4SY",
         type: options[:profileType],
