@@ -56,7 +56,6 @@ platform :ios do
         git_url: "https://github.com/Nurdynzo/mobile-test.git",
         platform: "ios",
         team_id: "TH67FFV4SY",
-        type: options[:profileType],
         username: "ololosky@gmail.com",
     )
     increment_build_number(xcodeproj: "./ios/plateaumed.xcodeproj")
